@@ -1,0 +1,42 @@
+<body>
+    <h2>Juego de Adivinación!</h2>
+    <div class="formulario">
+        <!-- NOMBRE -->
+        <div>
+            <label for="Nombre">Nombre</label>
+            <input type="text" [(ngModel)]="this.nombre" [disabled]="enviado" (focus)="this.focusNombre=true">
+            <span  *ngIf="this.focusNombre && (nombre =='' || nombre == null)" style="color: red;"> ❌ El nombre no puede estar vacío</span>
+            <span *ngIf="nombre !=''"> ✅</span>
+        </div>
+        <br>
+        <div>
+            <!-- APELLIDOS -->
+            <label for="Apellidos">Apellidos </label>
+            <input type="text" [(ngModel)]="this.apellidos" [disabled]="enviado" (focus)="this.focusApellido=true">
+            <span *ngIf="(this.apellidos =='' || nombre == null) && this.focusApellido" style="color: red;"> ❌ El apellido no puede estar vacío</span>
+            <span *ngIf="this.apellidos !=''"> ✅</span>
+        </div>
+        <br>
+        <div>
+            <!-- RANGO -->
+            <label for="rango">Rango máx</label>
+            <input type="number" [(ngModel)]="this.rango" [disabled]="enviado">
+            <span *ngIf="this.rango>=0 && this.rango  <4;" style="color: red;"> ❌ el rango mínimo es 4</span>
+            <span *ngIf="this.rango >= 4"> ✅</span>           
+            <!-- <span *ngIf="this.rango ==0" style="color: red;"> ❌ El rango no puede estar vacío</span>            -->
+        </div>
+        <br>
+        <div>
+            <!-- INTENTOS -->
+            <label for="intentos">Nº intentos </label>
+            <input type="number" [(ngModel)]="this.intentos" [disabled]="enviado" (focus)="this.focusIntentos=true">
+            <span *ngIf="(this.intentos == null) && this.focusIntentos" style="color: red;"> ❌ Indique el número de intentos</span>
+            <span *ngIf="this.intentos == 0" style="color: red;"> ❌ Mínimo 1 intento</span>
+            <span *ngIf="this.intentos != null"> ✅</span>
+        </div>
+        <br>
+        <!-- RECOGER DATOS -->
+        <button [disabled]="!formularioValido()" (click)="recogerDatos()">Recoger datos</button>
+    </div>
+    <app-juego *ngIf="configuracion" [configuracion]="configuracion"></app-juego>
+</body>

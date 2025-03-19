@@ -1,0 +1,45 @@
+body{
+    height: 93vh;
+    width: 96vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: lightsteelblue;
+    padding: 1rem;
+}
+label{
+    font-size: 1.2rem;
+    text-align: right;  
+}
+input{
+    font-size: 1.1rem;
+    text-align: start;
+}
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: #D8BFD8;
+    border-radius: 2rem;
+}
+input{
+    opacity: 1;
+    background-color: #FFC0CB;
+    border-radius: 0.5rem;
+    margin-left: 0.5rem;
+    width: 7rem;
+}
+
+div{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+button{
+    border-radius: 0.75rem;    
+    background-color:#FFC0CB ;
+    font-size: 1.1rem;
+}

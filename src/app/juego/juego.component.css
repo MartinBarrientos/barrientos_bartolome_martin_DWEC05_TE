@@ -1,0 +1,23 @@
+body{
+    background-color: #D8BFD8;
+    border-radius: 1rem;
+    padding: 0.1rem 1rem 0.1rem 1rem;
+}
+input{
+    opacity: 1;
+    background-color: #FFC0CB;
+    border-radius: 0.5rem;
+    margin-right: 1rem;
+    width: 3rem;
+}
+button{
+    border-radius: 0.75rem;    
+    background-color:#FFC0CB ;
+    font-size: 1rem;
+}
+label{
+    font-size: 1.2rem;
+}
+input{
+    font-size: 1.1rem;
+}

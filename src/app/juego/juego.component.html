@@ -1,0 +1,15 @@
+<body *ngIf="configuracion.nombre">
+    <h3>Ongi etorri {{ configuracion.nombre }} {{ configuracion.apellidos }}</h3>
+    <label for="numero">Adivina el número: </label>
+    <input #inputNumero type="number">
+    <button [disabled]="this.configuracion.intentos ==0 ||this.ganador==true" (click)="validarNumero(inputNumero.valueAsNumber)">Enviar</button>
+    <br>
+    <span *ngIf="haJugado && this.numero > configuracion.aleatorio!">Te pasaste!</span>
+    <span *ngIf="haJugado && configuracion.aleatorio == (this.numero+1)" style="color: red;">Caliente</span>
+    <span *ngIf="haJugado && configuracion.aleatorio == (this.numero+2)" style="color: yellow;">Templado</span>
+    <span *ngIf="haJugado && configuracion.aleatorio! >(this.numero+2)" style="color: blue;">Frio</span>
+    <span *ngIf="haJugado && configuracion.aleatorio == this.numero" style="color: green;">Ganaste!</span>
+    <br>
+    <span *ngIf="this.configuracion.intentos == 0 && this.ganador==false" style="color: red;">¡Has perdido! Te quedaste sin intentos, el numero era: {{configuracion.aleatorio}}</span>   
+    <button *ngIf="this.ganador==true || this.intentos==0" (click)="volverJugar()">volver a jugar</button>   
+</body>
